@@ -74,6 +74,10 @@ local Runner = {
         [17] = { region="Stormhaven", cw = 19, ccw = 31},
         [19] = { region="Stormhaven", cw = 31, ccw = 17},
         [31] = { region="Stormhaven", cw = 17, ccw = 19},
+		[442] = { region="The Reach", cw = 444, ccw = 443},
+		[444] = { region="The Reach", cw = 441, ccw = 442},
+		[441] = { region="The Reach", cw = 443, ccw = 444},
+		[443] = { region="The Reach", cw = 442, ccw = 441},
         [110] = { region="The Rift", cw = 116, ccw = 114},
         [116] = { region="The Rift", cw = 114, ccw = 110},
         [114] = { region="The Rift", cw = 110, ccw = 116}
