@@ -211,11 +211,16 @@ end
 
 
 local assistants = {
-    267, -- Nuzhimeh
-    300, -- Fence
-    301, -- Tythis
-    6376, -- Ezabi
-    6378 -- Fezez
+    267,	-- Tythis Andromo, the Banker
+    300,	-- Pirharri the Smuggler
+    301,	-- Nuzhimeh the Merchant
+	4993,	-- Tythis Andromo, the Banker
+    6376,	-- Ezabi the Banker
+    6378,	-- Fezez the Merchant
+	8994,	-- Baron Jangleplume, the Banker
+	8995,	-- Peddler of Prizes, the Merchant
+	9743,	-- Factotum Property Steward
+	9745	-- Ghrasharog, Armory Assistant
 }
 
 local buffs = {
