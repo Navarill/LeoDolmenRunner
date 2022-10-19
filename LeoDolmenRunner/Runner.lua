@@ -220,7 +220,8 @@ local assistants = {
 	8994,	-- Baron Jangleplume, the Banker
 	8995,	-- Peddler of Prizes, the Merchant
 	9743,	-- Factotum Property Steward
-	9745	-- Ghrasharog, Armory Assistant
+	9745,	-- Ghrasharog, Armory Assistant
+	10184	-- Giladil the Ragpicker
 }
 
 local buffs = {
