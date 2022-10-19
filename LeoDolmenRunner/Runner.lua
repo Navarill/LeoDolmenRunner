@@ -59,9 +59,9 @@ local Runner = {
         [100] = { region="Malabal Tor", cw = 105, ccw = 104},		-- Vulkwasten
         [104] = { region="Malabal Tor", cw = 100, ccw = 105},		-- Abamath
         [105] = { region="Malabal Tor", cw = 104, ccw = 100},		-- Wilding Run
-        [157] = { region="Reaper's March", cw = 162, ccw = 158},
-        [158] = { region="Reaper's March", cw = 157, ccw = 162},
-        [162] = { region="Reaper's March", cw = 158, ccw = 157},
+        [157] = { region="Reaper's March", cw = 161, ccw = 158},	-- Fort Sphinxmoth
+        [158] = { region="Reaper's March", cw = 157, ccw = 161},	-- Arenthia
+		[161] = { region="Reaper's March", cw = 158, ccw = 157},	-- Moonmont
         [10] = { region="Rivenspire", cw = 13, ccw = 86},
         [13] = { region="Rivenspire", cw = 86, ccw = 10},
         [86] = { region="Rivenspire", cw = 10, ccw = 13},
