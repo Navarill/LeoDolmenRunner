@@ -56,9 +56,9 @@ local Runner = {
         [148] = { region="Greenshade", cw = 152, ccw = 149},
         [149] = { region="Greenshade", cw = 148, ccw = 152},
         [152] = { region="Greenshade", cw = 149, ccw = 148},
-        [100] = { region="Malabal Tor", cw = 105, ccw = 103},
-        [103] = { region="Malabal Tor", cw = 100, ccw = 105},
-        [105] = { region="Malabal Tor", cw = 103, ccw = 100},
+        [100] = { region="Malabal Tor", cw = 105, ccw = 104},		-- Vulkwasten
+        [104] = { region="Malabal Tor", cw = 100, ccw = 105},		-- Abamath
+        [105] = { region="Malabal Tor", cw = 104, ccw = 100},		-- Wilding Run
         [157] = { region="Reaper's March", cw = 162, ccw = 158},
         [158] = { region="Reaper's March", cw = 157, ccw = 162},
         [162] = { region="Reaper's March", cw = 158, ccw = 157},
