@@ -65,10 +65,10 @@ function LeoDolmenRunner_Settings:CreatePanel()
         },{
             name = "Max group size",
             type = "dropdown",
-            choices = {4, 12, 24},
+            choices = {4, 12},
             getFunc = function() return LeoDolmenRunner.settings.inviter.maxSize end,
             setFunc = function(value) LeoDolmenRunner.settings.inviter.maxSize = value end,
-            default = 24,
+            default = 12,
         },{
             type = "checkbox",
             name = "Enable Blacklist",
