@@ -31,7 +31,6 @@ local Runner = {
         ccw = -1
     },
     wayshrines = {
-        -- summerset 353 358 349 357 365
         [59] = { region="Alik'r Desert", cw = 60, ccw = 155},
         [60] = { region="Alik'r Desert", cw = 155, ccw = 59},
         [155] = { region="Alik'r Desert", cw = 59, ccw = 60},
@@ -59,12 +58,19 @@ local Runner = {
         [100] = { region="Malabal Tor", cw = 105, ccw = 104},		-- Vulkwasten
         [104] = { region="Malabal Tor", cw = 100, ccw = 105},		-- Abamath
         [105] = { region="Malabal Tor", cw = 104, ccw = 100},		-- Wilding Run
+		-- Northern Elsweyr 397 387 386
+		[397] = { region="Northern Elsweyr", cw = 387, ccw = 386},	-- Star Haven
+		[387] = { region="Northern Elsweyr", cw = 386, ccw = 397},	-- Hakoshae
+		[386] = { region="Northern Elsweyr", cw = 397, ccw = 387},	-- Scar's End
         [157] = { region="Reaper's March", cw = 161, ccw = 158},	-- Fort Sphinxmoth
         [158] = { region="Reaper's March", cw = 157, ccw = 161},	-- Arenthia
 		[161] = { region="Reaper's March", cw = 158, ccw = 157},	-- Moonmont
         [10] = { region="Rivenspire", cw = 13, ccw = 86},
         [13] = { region="Rivenspire", cw = 86, ccw = 10},
         [86] = { region="Rivenspire", cw = 10, ccw = 13},
+		-- Southern Elsweyr 403 406
+		[403] = { region="Southern Elsweyr", cw = 406, ccw = 406},	-- South Guard Ruins
+		[406] = { region="Southern Elsweyr", cw = 403, ccw = 403},	-- Pridehome
         [47] = { region="Shadowfen", cw = 51, ccw = 53},
         [51] = { region="Shadowfen", cw = 53, ccw = 47},
         [53] = { region="Shadowfen", cw = 47, ccw = 51},
@@ -74,10 +80,18 @@ local Runner = {
         [17] = { region="Stormhaven", cw = 19, ccw = 31},
         [19] = { region="Stormhaven", cw = 31, ccw = 17},
         [31] = { region="Stormhaven", cw = 17, ccw = 19},
-		[441] = { region="The Reach", cw = 443, ccw = 444},
-		[442] = { region="The Reach", cw = 444, ccw = 443},
-		[443] = { region="The Reach", cw = 442, ccw = 441},
-		[444] = { region="The Reach", cw = 441, ccw = 442},
+		-- Summerset 349 357 365 353 354 358
+		[349] = { region="Summerset", cw = 357, ccw = 358},			-- King's Haven Pass
+		[357] = { region="Summerset", cw = 365, ccw = 354},			-- Eastern Pass
+		[365] = { region="Summerset", cw = 353, ccw = 353},			-- Sunhold
+		[353] = { region="Summerset", cw = 354, ccw = 365},			-- Cey-Tarn Keep
+		[354] = { region="Summerset", cw = 358, ccw = 357},			-- Ebon Stadmont
+		[358] = { region="Summerset", cw = 349, ccw = 349},			-- The Crystal Tower
+		-- The Reach 442 444 441 443
+		[442] = { region="The Reach", cw = 444, ccw = 443},			-- Druadach Mountains
+		[444] = { region="The Reach", cw = 441, ccw = 442},			-- Lost Valley
+		[441] = { region="The Reach", cw = 443, ccw = 444},			-- Briar Rock
+		[443] = { region="The Reach", cw = 442, ccw = 441},			-- North Markarth
 		[110] = { region="The Rift", cw = 116, ccw = 114},
         [114] = { region="The Rift", cw = 110, ccw = 116},
         [116] = { region="The Rift", cw = 114, ccw = 110}
