@@ -4,7 +4,7 @@
 ## AddOnVersion: 131
 ## Author: LeandroSilva
 ## SavedVariables: LeoDolmenRunner_Data
-## DependsOn: LibFeedback LibAddonMenu-2.0 LibSavedVars
+## DependsOn: LibFeedback LibAddonMenu-2.0>=28 LibSavedVars
 
 LeoDolmenRunner.lua
 Runner.lua
