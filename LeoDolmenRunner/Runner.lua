@@ -243,7 +243,8 @@ local buffs = {
     { id = 1167, from =  326, to =  403 }, -- The Pie of Misrule
     { id = 1168, from = 1217, to = 1231 }, -- Breda's Bottomless Mead Mug
     { id = 1168, from =  101, to =  105 }, -- Breda's Bottomless Mead Mug
-    { id = 10287, abilityId = 136348 }, -- Jubilee Cake 2022
+	{ id = 11089, abilityId = 136348 }, -- Jubilee Cake 2023
+    { id = 10287}, -- Jubilee Cake 2022
 	{ id = 9012 }, -- Jubilee Cake 2021
 	{ id = 7619 }, -- Jubilee Cake 2020    
 	{ id = 5886 }, -- Jubilee Cake 2019
