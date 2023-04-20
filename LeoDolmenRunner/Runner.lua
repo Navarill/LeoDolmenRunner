@@ -223,19 +223,23 @@ function Runner:Update(tick)
     self:UpdateData()
 end
 
-
 local assistants = {
     267,	-- Tythis Andromo, the Banker
     300,	-- Pirharri the Smuggler
     301,	-- Nuzhimeh the Merchant
+	396,	-- Allaria Erwen the Exporter
+	397,	-- Cassus Andronicus the Mercenary
 	4993,	-- Tythis Andromo, the Banker
     6376,	-- Ezabi the Banker
     6378,	-- Fezez the Merchant
 	8994,	-- Baron Jangleplume, the Banker
 	8995,	-- Peddler of Prizes, the Merchant
 	9743,	-- Factotum Property Steward
+	9744,	-- Factotum Commerce Delegate
 	9745,	-- Ghrasharog, Armory Assistant
-	10184	-- Giladil the Ragpicker
+	10184,	-- Giladil the Ragpicker
+	10617,	-- Aderene, Fargrave Dregs Dealer
+	10618	-- Zugoth, Armory Advisor
 }
 
 local buffs = {
