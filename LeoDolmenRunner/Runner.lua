@@ -31,30 +31,39 @@ local Runner = {
         ccw = -1
     },
     wayshrines = {
+		-- Alik'r Desert
         [59] = { region="Alik'r Desert", cw = 60, ccw = 155},
         [60] = { region="Alik'r Desert", cw = 155, ccw = 59},
         [155] = { region="Alik'r Desert", cw = 59, ccw = 60},
+		-- Auridon
         [127] = { region="Auridon", cw = 175, ccw = 176},
         [175] = { region="Auridon", cw = 176, ccw = 127},
         [176] = { region="Auridon", cw = 127, ccw = 175},
+		-- Bangkorai
         [35] = { region="Bangkorai", cw = 39, ccw = 206},
         [39] = { region="Bangkorai", cw = 206, ccw = 35},
         [206] = { region="Bangkorai", cw = 35, ccw = 39},
+		-- Deshaan
         [27] = { region="Deshaan", cw = 80, ccw = 30},
         [30] = { region="Deshaan", cw = 27, ccw = 80},
         [80] = { region="Deshaan", cw = 30, ccw = 27},
+		-- Eastmarch
         [90] = { region="Eastmarch", cw = 95, ccw = 92},
         [92] = { region="Eastmarch", cw = 90, ccw = 95},
         [95] = { region="Eastmarch", cw = 92, ccw = 90},
+		-- Glenumbra
         [2] = { region="Glenumbra", cw = 20, ccw = 6},
         [6] = { region="Glenumbra", cw = 2, ccw = 20},
         [20] = { region="Glenumbra", cw = 6, ccw = 2},
+		-- Grahtwood
         [21] = { region="Grahtwood", cw = 207, ccw = 164},
         [164] = { region="Grahtwood", cw = 21, ccw = 207},
         [207] = { region="Grahtwood", cw = 164, ccw = 21},
+		-- Greenshade
         [148] = { region="Greenshade", cw = 152, ccw = 149},
         [149] = { region="Greenshade", cw = 148, ccw = 152},
         [152] = { region="Greenshade", cw = 149, ccw = 148},
+		-- Malabal Tor
         [100] = { region="Malabal Tor", cw = 105, ccw = 104},		-- Vulkwasten
         [104] = { region="Malabal Tor", cw = 100, ccw = 105},		-- Abamath
         [105] = { region="Malabal Tor", cw = 104, ccw = 100},		-- Wilding Run
@@ -62,21 +71,26 @@ local Runner = {
 		[397] = { region="Northern Elsweyr", cw = 387, ccw = 386},	-- Star Haven
 		[387] = { region="Northern Elsweyr", cw = 386, ccw = 397},	-- Hakoshae
 		[386] = { region="Northern Elsweyr", cw = 397, ccw = 387},	-- Scar's End
+		-- Reaper's March
         [157] = { region="Reaper's March", cw = 161, ccw = 158},	-- Fort Sphinxmoth
         [158] = { region="Reaper's March", cw = 157, ccw = 161},	-- Arenthia
 		[161] = { region="Reaper's March", cw = 158, ccw = 157},	-- Moonmont
+		-- Rivenspire
         [10] = { region="Rivenspire", cw = 13, ccw = 86},
         [13] = { region="Rivenspire", cw = 86, ccw = 10},
         [86] = { region="Rivenspire", cw = 10, ccw = 13},
 		-- Southern Elsweyr 403 406
 		[403] = { region="Southern Elsweyr", cw = 406, ccw = 406},	-- South Guard Ruins
 		[406] = { region="Southern Elsweyr", cw = 403, ccw = 403},	-- Pridehome
+		-- Shadowfen
         [47] = { region="Shadowfen", cw = 51, ccw = 53},
         [51] = { region="Shadowfen", cw = 53, ccw = 47},
         [53] = { region="Shadowfen", cw = 47, ccw = 51},
+		-- Stonefalls
         [67] = { region="Stonefalls", cw = 71, ccw = 73},
         [71] = { region="Stonefalls", cw = 73, ccw = 67},
         [73] = { region="Stonefalls", cw = 67, ccw = 71},
+		-- Stormhaven
         [17] = { region="Stormhaven", cw = 19, ccw = 31},
         [19] = { region="Stormhaven", cw = 31, ccw = 17},
         [31] = { region="Stormhaven", cw = 17, ccw = 19},
@@ -92,6 +106,7 @@ local Runner = {
 		[444] = { region="The Reach", cw = 441, ccw = 442},			-- Lost Valley
 		[441] = { region="The Reach", cw = 443, ccw = 444},			-- Briar Rock
 		[443] = { region="The Reach", cw = 442, ccw = 441},			-- North Markarth
+		-- The Rift
 		[110] = { region="The Rift", cw = 116, ccw = 114},
         [114] = { region="The Rift", cw = 110, ccw = 116},
         [116] = { region="The Rift", cw = 114, ccw = 110}
@@ -239,14 +254,14 @@ local assistants = {
 	9745,	-- Ghrasharog, Armory Assistant
 	10184,	-- Giladil the Ragpicker
 	10617,	-- Aderene, Fargrave Dregs Dealer
-	10618	-- Zugoth, Armory Advisor
+	10618	-- Zuqoth, Armory Advisor
 }
 
 local buffs = {
-    { id =  479, from = 1022, to = 1103 }, -- Witchmother's Whistle
-    { id = 1167, from =  326, to =  403 }, -- The Pie of Misrule
-    { id = 1168, from = 1217, to = 1231 }, -- Breda's Bottomless Mead Mug
-    { id = 1168, from =  101, to =  105 }, -- Breda's Bottomless Mead Mug
+    { id =  479, from = 1020, to = 1102 }, -- Witchmother's Whistle (2022)
+    { id = 1167, from =  329, to =  406 }, -- The Pie of Misrule (2023)
+    { id = 1168, from = 1215, to = 1231 }, -- Breda's Bottomless Mead Mug (2022)
+    { id = 1168, from =  101, to =  104 }, -- Breda's Bottomless Mead Mug (2022)
 	{ id = 11089, abilityId = 136348 }, -- Jubilee Cake 2023
     { id = 10287}, -- Jubilee Cake 2022
 	{ id = 9012 }, -- Jubilee Cake 2021
