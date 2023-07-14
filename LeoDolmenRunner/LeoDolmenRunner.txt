@@ -1,6 +1,6 @@
 ## Title: Leo's Dolmen Runner
-## APIVersion: 101038
-## Version: 1.3.1.N1
+## APIVersion: 101038 101039
+## Version: 1.3.1
 ## AddOnVersion: 131
 ## Author: LeandroSilva
 ## SavedVariables: LeoDolmenRunner_Data
