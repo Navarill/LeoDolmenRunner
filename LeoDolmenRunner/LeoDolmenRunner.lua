@@ -48,13 +48,6 @@ function LDR:Update()
 end
 
 function LDR:Initialize()
-    local showButton, feedbackWindow = LibFeedback:initializeFeedbackWindow(LeoDolmenRunner,
-    LDR.name,LeoDolmenRunnerWindow, "@LeandroSilva",
-            {TOPRIGHT, LeoDolmenRunnerWindow, TOPRIGHT,-35,-2},
-            {0,1000,10000,"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9KM4PZU2UZ6A"},
-            "If you find a bug, have a request, or simply wish to donate, send me a mail.")
-    LDR.feedback = feedbackWindow
-    LDR.feedback:SetDrawTier(DT_HIGH)
 
     LeoDolmenRunnerWindowTitle:SetText(LeoDolmenRunner.displayName .. " v" .. LeoDolmenRunner.version)
 

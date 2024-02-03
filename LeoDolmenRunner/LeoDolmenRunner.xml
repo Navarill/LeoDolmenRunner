@@ -37,16 +37,6 @@
                         </Texture>
                     </Controls>
                 </Button>
-                <Button name="$(parent)FeedbackButton" clickSound="Click">
-                    <Anchor point="TOPRIGHT" relativePoint="TOPLEFT" relativeTo="$(parent)Close" offsetX="-5"/>
-                    <Dimensions x="30" y="30"/>
-                    <Controls>
-                        <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
-                            <AnchorFill/>
-                            <Edge edgeSize="1"/>
-                        </Backdrop>
-                    </Controls>
-                </Button>
 
                 <Backdrop name="LeoDolmenRunnerWindowPanel" tier="1" centerColor="000000" edgeColor="202020" hidden="false" clampedToScreen="true" movable="false" mouseEnabled="true">
                     <Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="LeoDolmenRunnerWindow" offsetX="0" offsetY="42"/>
