@@ -1,5 +1,5 @@
 ## Title: Leo's Dolmen Runner
-## APIVersion: 101040
+## APIVersion: 101040 101041
 ## Version: 1.3.1
 ## AddOnVersion: 131
 ## Author: LeandroSilva
