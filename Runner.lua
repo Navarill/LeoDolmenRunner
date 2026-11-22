@@ -1,7 +1,6 @@
 local Runner = {
     started = false,
     timeout = 900,
-    activeBuff = 0,
     data = {
         direction = 1,
         startedTime = 0,
@@ -126,7 +125,6 @@ function Runner:Start()
     Runner.started = true
     LeoDolmenRunnerWindowPanelStartStopLabel:SetText("Stop")
     LeoDolmenRunner.ui:CreateUI()
-    self:GetActiveBuff()
 end
 
 function Runner:Stop()
@@ -210,17 +208,16 @@ end
 function Runner:UpdateData()
     local xpGained = 0
     local firstEventTimestamp = 0
-    if (#Runner.data.events > 0) then
-        for i, event in pairs(Runner.data.events) do
-            if GetDiffBetweenTimeStamps(GetTimeStamp(), event.timestamp) > Runner.timeout then
-                Runner.data.events[i] = nil
-            else
-                xpGained = xpGained + event.xp
+    local now = GetTimeStamp()
 
-                if firstEventTimestamp == 0 or event.timestamp < firstEventTimestamp then
-                    firstEventTimestamp = event.timestamp
-                end
-
+    for i = #Runner.data.events, 1, -1 do
+        local event = Runner.data.events[i]
+        if GetDiffBetweenTimeStamps(now, event.timestamp) > Runner.timeout then
+            table.remove(Runner.data.events, i)
+        else
+            xpGained = xpGained + event.xp
+            if firstEventTimestamp == 0 or event.timestamp < firstEventTimestamp then
+                firstEventTimestamp = event.timestamp
             end
         end
     end
@@ -229,6 +226,8 @@ function Runner:UpdateData()
 
     if xpGained > 0 then
         Runner.data.hoursToLevel, Runner.data.minutesToLevel = TimeToLevel()
+    else
+        Runner.data.hoursToLevel, Runner.data.minutesToLevel = 0, 0
     end
 end
 
@@ -257,61 +256,12 @@ local assistants = {
 	10618	-- Zuqoth, Armory Advisor
 }
 
-local buffs = {
-    { id =  479, from = 1020, to = 1102 }, -- Witchmother's Whistle (2022)
-    { id = 1167, from =  329, to =  406 }, -- The Pie of Misrule (2023)
-    { id = 1168, from = 1215, to = 1231 }, -- Breda's Bottomless Mead Mug (2022)
-    { id = 1168, from =  101, to =  104 }, -- Breda's Bottomless Mead Mug (2022)
-	{ id = 11089, abilityId = 136348 }, -- Jubilee Cake 2023
-    { id = 10287}, -- Jubilee Cake 2022
-	{ id = 9012 }, -- Jubilee Cake 2021
-	{ id = 7619 }, -- Jubilee Cake 2020    
-	{ id = 5886 }, -- Jubilee Cake 2019
-    { id = 4786 }, -- Jubilee Cake 2018
-    { id = 1109 }, -- Jubilee Cake 2017
-    { id =  356 }, -- Jubilee Cake 2016
-}
-
-function Runner:IsBuffActive(collectible)
-    if type(collectible) ~= "table" then
-        for _, buff in ipairs(buffs) do
-            if buff.id == collectible then
-                collectible = buff
-                break
-            end
-        end
-    end
-    for i = 1, GetNumBuffs("player") do
-        local buffName, _, _, _, _, _, _, _, _, _, abilityId = GetUnitBuffInfo("player", i)
-        if collectible.abilityId and abilityId == collectible.abilityId then return true end
-    end
-    return false
-end
-
 function Runner:OnCombatState(inCombat)
     if not Runner.started then return end
 
     if IsUnitDead("player") then
         zo_callLater(function() Runner:OnCombatState(inCombat) end, 500)
         return
-    end
-
-    if not inCombat and LeoDolmenRunner.settings.runner.reapplyBuff then
-        if Runner.activeBuff == 0 then
-            local date = tonumber(os.date("%m%d", GetTimeStamp()))
-            for _, collectible in ipairs(buffs) do
-                local _, _, _, _, unlocked = GetCollectibleInfo(collectible.id)
-                if unlocked and collectible.from and collectible.from <= date and collectible.to > date then
-                    Runner.activeBuff = collectible.id
-                    break
-                end
-            end
-        end
-
-        if Runner.activeBuff > 0 and not self:IsBuffActive(Runner.activeBuff) then
-            LeoDolmenRunner.log("Reapplying " .. GetCollectibleInfo(Runner.activeBuff))
-            UseCollectible(Runner.activeBuff)
-        end
     end
 
     if inCombat and LeoDolmenRunner.settings.runner.autoDismiss then
@@ -345,19 +295,7 @@ function Runner:OnExperienceGain(reason, level, previousExperience, currentExper
     self:UpdateData()
 end
 
-function Runner:GetActiveBuff()
-    for _, collectible in pairs(buffs) do
-        if self:IsBuffActive(collectible) then
-            Runner.activeBuff = collectible.id
-            -- LeoDolmenRunner.debug("Found buff " .. Runner.activeBuff)
-            return
-        end
-    end
-end
-
 function Runner:Initialize()
-    Runner.activeBuff = 0
-    self:GetActiveBuff()
 end
 
 LeoDolmenRunner.runner = Runner

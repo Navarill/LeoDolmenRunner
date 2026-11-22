@@ -8,8 +8,7 @@ LeoDolmenRunner = {
         hidden = true,
         runner = {
             autoTravel = true,
-            autoDismiss = true,
-            reapplyBuff = true
+            autoDismiss = true
         },
         inviter = {
             maxSize = 24,

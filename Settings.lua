@@ -38,13 +38,6 @@ function LeoDolmenRunner_Settings:CreatePanel()
             getFunc = function() return LeoDolmenRunner.settings.runner.autoDismiss end,
             setFunc = function(value) LeoDolmenRunner.settings.runner.autoDismiss = value end,
         },{
-            type = "checkbox",
-            name = "Auto reapply holiday buff",
-            default = true,
-            width = "full",
-            getFunc = function() return LeoDolmenRunner.settings.runner.reapplyBuff end,
-            setFunc = function(value) LeoDolmenRunner.settings.runner.reapplyBuff = value end,
-        },{
             type = "header",
             name = "|c3f7fffAuto Inviter|r"
         },{
