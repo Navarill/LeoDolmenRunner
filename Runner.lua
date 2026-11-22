@@ -30,85 +30,113 @@ local Runner = {
         ccw = -1
     },
     wayshrines = {
-		-- Alik'r Desert
+        -- Alik'r Desert
         [59] = { region="Alik'r Desert", cw = 60, ccw = 155},
         [60] = { region="Alik'r Desert", cw = 155, ccw = 59},
         [155] = { region="Alik'r Desert", cw = 59, ccw = 60},
-		-- Auridon
+        
+        -- Auridon
         [127] = { region="Auridon", cw = 175, ccw = 176},
         [175] = { region="Auridon", cw = 176, ccw = 127},
         [176] = { region="Auridon", cw = 127, ccw = 175},
-		-- Bangkorai
+        
+        -- Bangkorai
         [35] = { region="Bangkorai", cw = 39, ccw = 206},
         [39] = { region="Bangkorai", cw = 206, ccw = 35},
         [206] = { region="Bangkorai", cw = 35, ccw = 39},
-		-- Deshaan
+        
+        -- Deshaan
         [27] = { region="Deshaan", cw = 80, ccw = 30},
         [30] = { region="Deshaan", cw = 27, ccw = 80},
         [80] = { region="Deshaan", cw = 30, ccw = 27},
-		-- Eastmarch
+        
+        -- Eastmarch
         [90] = { region="Eastmarch", cw = 95, ccw = 92},
         [92] = { region="Eastmarch", cw = 90, ccw = 95},
         [95] = { region="Eastmarch", cw = 92, ccw = 90},
-		-- Glenumbra
+        
+        -- Galen (Random Rotation)
+        
+        -- Glenumbra
         [2] = { region="Glenumbra", cw = 20, ccw = 6},
         [6] = { region="Glenumbra", cw = 2, ccw = 20},
         [20] = { region="Glenumbra", cw = 6, ccw = 2},
-		-- Grahtwood
+        
+        -- Grahtwood
         [21] = { region="Grahtwood", cw = 207, ccw = 164},
         [164] = { region="Grahtwood", cw = 21, ccw = 207},
         [207] = { region="Grahtwood", cw = 164, ccw = 21},
-		-- Greenshade
+        
+        -- Greenshade
         [148] = { region="Greenshade", cw = 152, ccw = 149},
         [149] = { region="Greenshade", cw = 148, ccw = 152},
         [152] = { region="Greenshade", cw = 149, ccw = 148},
-		-- Malabal Tor
-        [100] = { region="Malabal Tor", cw = 105, ccw = 104},		-- Vulkwasten
-        [104] = { region="Malabal Tor", cw = 100, ccw = 105},		-- Abamath
-        [105] = { region="Malabal Tor", cw = 104, ccw = 100},		-- Wilding Run
-		-- Northern Elsweyr 397 387 386
-		[397] = { region="Northern Elsweyr", cw = 387, ccw = 386},	-- Star Haven
-		[387] = { region="Northern Elsweyr", cw = 386, ccw = 397},	-- Hakoshae
-		[386] = { region="Northern Elsweyr", cw = 397, ccw = 387},	-- Scar's End
-		-- Reaper's March
-        [157] = { region="Reaper's March", cw = 161, ccw = 158},	-- Fort Sphinxmoth
-        [158] = { region="Reaper's March", cw = 157, ccw = 161},	-- Arenthia
-		[161] = { region="Reaper's March", cw = 158, ccw = 157},	-- Moonmont
-		-- Rivenspire
+        
+        -- High Isle (Random Rotation)
+        
+        -- Malabal Tor
+        [100] = { region="Malabal Tor", cw = 105, ccw = 104},       -- Vulkwasten
+        [104] = { region="Malabal Tor", cw = 100, ccw = 105},       -- Abamath
+        [105] = { region="Malabal Tor", cw = 104, ccw = 100},       -- Wilding Run
+        
+        -- Northern Elsweyr 397 387 386
+        [397] = { region="Northern Elsweyr", cw = 387, ccw = 386},  -- Star Haven
+        [387] = { region="Northern Elsweyr", cw = 386, ccw = 397},  -- Hakoshae
+        [386] = { region="Northern Elsweyr", cw = 397, ccw = 387},  -- Scar's End
+        
+        -- Reaper's March
+        [157] = { region="Reaper's March", cw = 161, ccw = 158},    -- Fort Sphinxmoth
+        [158] = { region="Reaper's March", cw = 157, ccw = 161},    -- Arenthia
+        [161] = { region="Reaper's March", cw = 158, ccw = 157},    -- Moonmont
+        
+        -- Rivenspire
         [10] = { region="Rivenspire", cw = 13, ccw = 86},
         [13] = { region="Rivenspire", cw = 86, ccw = 10},
         [86] = { region="Rivenspire", cw = 10, ccw = 13},
-		-- Southern Elsweyr 403 406
-		[403] = { region="Southern Elsweyr", cw = 406, ccw = 406},	-- South Guard Ruins
-		[406] = { region="Southern Elsweyr", cw = 403, ccw = 403},	-- Pridehome
-		-- Shadowfen
+        
+        -- Shadowfen
         [47] = { region="Shadowfen", cw = 51, ccw = 53},
         [51] = { region="Shadowfen", cw = 53, ccw = 47},
         [53] = { region="Shadowfen", cw = 47, ccw = 51},
-		-- Stonefalls
+        
+        -- Solstice (Random Rotation)
+        
+        -- Southern Elsweyr 403 406
+        [403] = { region="Southern Elsweyr", cw = 406, ccw = 406},  -- South Guard Ruins
+        [406] = { region="Southern Elsweyr", cw = 403, ccw = 403},  -- Pridehome
+        
+        -- Stonefalls
         [67] = { region="Stonefalls", cw = 71, ccw = 73},
         [71] = { region="Stonefalls", cw = 73, ccw = 67},
         [73] = { region="Stonefalls", cw = 67, ccw = 71},
-		-- Stormhaven
+        
+        -- Stormhaven
         [17] = { region="Stormhaven", cw = 19, ccw = 31},
         [19] = { region="Stormhaven", cw = 31, ccw = 17},
         [31] = { region="Stormhaven", cw = 17, ccw = 19},
-		-- Summerset 349 357 365 353 354 358
-		[349] = { region="Summerset", cw = 357, ccw = 358},			-- King's Haven Pass
-		[357] = { region="Summerset", cw = 365, ccw = 354},			-- Eastern Pass
-		[365] = { region="Summerset", cw = 353, ccw = 353},			-- Sunhold
-		[353] = { region="Summerset", cw = 354, ccw = 365},			-- Cey-Tarn Keep
-		[354] = { region="Summerset", cw = 358, ccw = 357},			-- Ebon Stadmont
-		[358] = { region="Summerset", cw = 349, ccw = 349},			-- The Crystal Tower
-		-- The Reach 442 444 441 443
-		[442] = { region="The Reach", cw = 444, ccw = 443},			-- Druadach Mountains
-		[444] = { region="The Reach", cw = 441, ccw = 442},			-- Lost Valley
-		[441] = { region="The Reach", cw = 443, ccw = 444},			-- Briar Rock
-		[443] = { region="The Reach", cw = 442, ccw = 441},			-- North Markarth
-		-- The Rift
-		[110] = { region="The Rift", cw = 116, ccw = 114},
+        
+        -- Summerset 349 357 365 353 354 358
+        [349] = { region="Summerset", cw = 357, ccw = 358},         -- King's Haven Pass
+        [357] = { region="Summerset", cw = 365, ccw = 354},         -- Eastern Pass
+        [365] = { region="Summerset", cw = 353, ccw = 353},         -- Sunhold
+        [353] = { region="Summerset", cw = 354, ccw = 365},         -- Cey-Tarn Keep
+        [354] = { region="Summerset", cw = 358, ccw = 357},         -- Ebon Stadmont
+        [358] = { region="Summerset", cw = 349, ccw = 349},         -- The Crystal Tower
+        
+        -- The Reach 442 444 441 443
+        [442] = { region="The Reach", cw = 444, ccw = 443},         -- Druadach Mountains
+        [444] = { region="The Reach", cw = 441, ccw = 442},         -- Lost Valley
+        [441] = { region="The Reach", cw = 443, ccw = 444},         -- Briar Rock
+        [443] = { region="The Reach", cw = 442, ccw = 441},         -- North Markarth
+        
+        -- The Rift
+        [110] = { region="The Rift", cw = 116, ccw = 114},
         [114] = { region="The Rift", cw = 110, ccw = 116},
-        [116] = { region="The Rift", cw = 114, ccw = 110}
+        [116] = { region="The Rift", cw = 114, ccw = 110},
+        
+        -- West Weald (Random Rotation)
+
+        -- Western Skyrim (Random Rotation)
     }
 }
 
@@ -238,22 +266,33 @@ function Runner:Update(tick)
 end
 
 local assistants = {
-    267,	-- Tythis Andromo, the Banker
-    300,	-- Pirharri the Smuggler
-    301,	-- Nuzhimeh the Merchant
-	396,	-- Allaria Erwen the Exporter
-	397,	-- Cassus Andronicus the Mercenary
-	4993,	-- Tythis Andromo, the Banker
-    6376,	-- Ezabi the Banker
-    6378,	-- Fezez the Merchant
-	8994,	-- Baron Jangleplume, the Banker
-	8995,	-- Peddler of Prizes, the Merchant
-	9743,	-- Factotum Property Steward
-	9744,	-- Factotum Commerce Delegate
-	9745,	-- Ghrasharog, Armory Assistant
-	10184,	-- Giladil the Ragpicker
-	10617,	-- Aderene, Fargrave Dregs Dealer
-	10618	-- Zuqoth, Armory Advisor
+    267,    -- Tythis Andromo, the Banker
+    300,    -- Nuzhimeh the Merchant
+    301,    -- Pirharri the Smuggler
+    396,    -- Allaria Erwen the Exporter
+    397,    -- Cassus Andronicus the Mercenary
+    6376,   -- Ezabi the Banker
+    6378,   -- Fezez the Merchant
+    8994,   -- Baron Jangleplume, the Banker
+    8995,   -- Peddler of Prizes, the Merchant
+    9743,   -- Factotum Property Steward
+    9744,   -- Factotum Commerce Delegate
+    9745,   -- Ghrasharog, Armory Assistant
+    10184,  -- Giladil the Ragpicker
+    10617,  -- Aderene, Fargrave Dregs Dealer
+    10618,  -- Zuqoth, Armory Advisor
+    11059,  -- Hoarfrost, Takubar Trader
+    11097,  -- Pyroclast, Infernace Conservator
+    11876,  -- Drinweth, Valenwood Armorer
+    11877,  -- Tzozabrar, Dwarven Deconstructor
+    12413,  -- Eri, Barking Banker
+    12414,  -- Xyn, Planar Purveyor
+    13063,  -- Siluruz, Realm Craftsmaster
+    13066,  -- Terilorne, Dibellan Freetrader
+    13517,  -- Celia Tyde, Lost Fleet Bursar
+    13518,  -- Voko, Carnaval Weapondancer
+    14018,  -- Pontius Remus, Lupine Scavenger
+    14204   -- Cambio Zammes, Rooster in Exile
 }
 
 function Runner:OnCombatState(inCombat)
