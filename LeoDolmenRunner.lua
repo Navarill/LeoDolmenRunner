@@ -11,7 +11,8 @@ LeoDolmenRunner = {
             autoDismiss = true
         },
         inviter = {
-            maxSize = 24,
+            message = "x",
+            maxSize = 12,
             autoKick = false,
             enableBlacklist = true,
             kickDelay = 10,
@@ -69,7 +70,7 @@ function LDR:Initialize()
             d("    /ldr stop: Stops the runner")
             d("    /ldr cw: Changes direction to clockwise")
             d("    /ldr ccw: Changes direction to counter clockwise")
-            d("    /ldr <letter>: Starts auto invite listening to the letter <letter>")
+            d("    /ldr <text>: Starts auto invite listening for <text> (eg: x or +dolmen)")
             d("    /ldr ai stop: Stops auto invite")
             return
         end
@@ -87,8 +88,8 @@ function LDR:Initialize()
         elseif options[1] == "bl" and #options == 3 and options[2] == "rem" then LDR.inviter:RemovePlayerFromBlacklist(options[3])
         elseif options[1] == "debug" and #options == 2 then LDR.isDebug = options[2] == "on"
         elseif options[1] == "ai" and #options == 2 and options[2] == "stop" then LDR.inviter:Stop()
-        elseif string.len(options[1]) == 1 then LDR.inviter:Start(options[1])
-        else LDR.log("Listening message must be only 1 letter (eg: x).")
+        elseif options[1] ~= nil and options[1] ~= "" then LDR.inviter:Start(options[1])
+        else LDR.log("Please specify a trigger message (eg: x or +dolmen).")
         end
     end
 

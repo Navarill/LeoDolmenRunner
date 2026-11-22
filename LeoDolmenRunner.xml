@@ -184,16 +184,16 @@
                         </Button>
 
                         <Label name="$(parent)MessageLabel" text="Listening to" font="LeoDolmenRunnerNormalFont" verticalAlignment="CENTER" horizontalAlignment="LEFT">
-                            <Dimensions x="80" y="35" />
+                            <Dimensions x="78" y="35" />
                             <Anchor point="TOPLEFT" relativeTo="$(parent)StartStop" relativePoint="TOPRIGHT" offsetX="6" offsetY="0" />
                         </Label>
-                        <Label name="$(parent)Message" text="x" color="39B027" font="LeoDolmenRunnerNormalFont" verticalAlignment="CENTER" horizontalAlignment="LEFT">
-                            <Dimensions x="20" y="35" />
-                            <Anchor point="TOPLEFT" relativeTo="$(parent)MessageLabel" relativePoint="TOPRIGHT" offsetX="6" offsetY="0" />
+                        <Label name="$(parent)Message" text="x" color="39B027" font="LeoDolmenRunnerNormalFont" wrapMode="ELLIPSIS" verticalAlignment="CENTER" horizontalAlignment="LEFT">
+                            <Dimensions x="68" y="35" />
+                            <Anchor point="TOPLEFT" relativeTo="$(parent)MessageLabel" relativePoint="TOPRIGHT" offsetX="4" offsetY="0" />
                         </Label>
-                        <Label name="$(parent)Hint" text="( /ldr <letter> )" font="LeoDolmenRunnerSmallFont" verticalAlignment="CENTER" horizontalAlignment="LEFT">
-                            <Dimensions x="80" y="35" />
-                            <Anchor point="TOPLEFT" relativeTo="$(parent)Message" relativePoint="TOPRIGHT" offsetX="6" offsetY="0" />
+                        <Label name="$(parent)Hint" text="( /ldr <text> )" font="LeoDolmenRunnerSmallFont" verticalAlignment="CENTER" horizontalAlignment="RIGHT">
+                            <Dimensions x="64" y="35" />
+                            <Anchor point="RIGHT" relativeTo="$(parent)" relativePoint="RIGHT" offsetX="-6" offsetY="0" />
                         </Label>
                     </Controls>
                 </Backdrop>

@@ -48,22 +48,26 @@ end
 function Inviter:Update(tick)
     if not Inviter.started or not IsUnitSoloOrGroupLeader("player") or tick ~= 5 then return end
 
-    self:CheckOfflines()
-    self:Kick()
+    if LeoDolmenRunner.settings.inviter.autoKick then
+        self:CheckOfflines()
+        self:Kick()
+    end
 end
 
-function Inviter:ChatMessage(type, from, message)
+function Inviter:ChatMessage(channelType, from, message)
     if not Inviter.started or not IsUnitSoloOrGroupLeader("player") then return end
 
     if GetGroupSize() >= LeoDolmenRunner.settings.inviter.maxSize then return end
 
-    if type ~= CHAT_CHANNEL_SAY and type ~= CHAT_CHANNEL_YELL and type ~= CHAT_CHANNEL_ZONE and type ~= CHAT_CHANNEL_ZONE_LANGUAGE_1 and
-    type ~= CHAT_CHANNEL_ZONE_LANGUAGE_2 and type ~= CHAT_CHANNEL_ZONE_LANGUAGE_3 and type ~= CHAT_CHANNEL_ZONE_LANGUAGE_4 then return end
+    if channelType ~= CHAT_CHANNEL_SAY and channelType ~= CHAT_CHANNEL_YELL and channelType ~= CHAT_CHANNEL_ZONE and channelType ~= CHAT_CHANNEL_ZONE_LANGUAGE_1 and
+    channelType ~= CHAT_CHANNEL_ZONE_LANGUAGE_2 and channelType ~= CHAT_CHANNEL_ZONE_LANGUAGE_3 and channelType ~= CHAT_CHANNEL_ZONE_LANGUAGE_4 then return end
 
-    message = string.lower(message)
-    if message ~= Inviter.message or from == nil or from == "" then return end
+    if from == nil or from == "" or message == nil then return end
 
-    from = from:gsub("%^.+", "")
+    local normalized = zo_strtrim(LocaleAwareToLower(message))
+    if normalized ~= Inviter.message then return end
+
+    from = zo_strformat("<<1>>", from)
     if self:IsPlayerInBlacklist(from) then
         LeoDolmenRunner.log("Can't invite " .. from .. ": in the blacklist")
         return
@@ -148,9 +152,10 @@ function Inviter:Start(message)
         return
     end
 
-    if message ~= nil then Inviter.message = message end
-
-    Inviter.message = string.lower(Inviter.message)
+    if message ~= nil and zo_strtrim(message) ~= "" then
+        Inviter.message = zo_strtrim(LocaleAwareToLower(message))
+        LeoDolmenRunner.settings.inviter.message = Inviter.message
+    end
 
     LeoDolmenRunnerWindowInviterPanelMessage:SetText(Inviter.message)
 
@@ -161,6 +166,8 @@ function Inviter:Start(message)
 end
 
 function Inviter:Initialize()
+    Inviter.message = zo_strtrim(LocaleAwareToLower(LeoDolmenRunner.settings.inviter.message or "x"))
+    LeoDolmenRunnerWindowInviterPanelMessage:SetText(Inviter.message)
 end
 
 LeoDolmenRunner.inviter = Inviter
